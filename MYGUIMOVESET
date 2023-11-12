@@ -236,15 +236,15 @@ TechSection:NewKeybind("Closing Curtains", "", Enum.KeyCode.Six, function()
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Combat"):WaitForChild("Skill"):FireServer(unpack(args))
 end)
 
-TechSection:NewKeybind("Panchiniko Rush", "", Enum.KeyCode.Seven, function()
+TechSection:NewKeybind("Pachkinko Rush", "", Enum.KeyCode.Seven, function()
     local args = {
-        [1] = "Private Pure Love Train: Panchinko Rush"
+        [1] = "Private Pure Love Train: Pachkinko Rush"
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Combat"):WaitForChild("Skill"):FireServer(unpack(args))
 end)
 
-TechSection:NewKeybind("Rendezvous", "", Enum.KeyCode.Eight, function()
+TechSection:NewKeybind("Rendezvous", "", Enum.KeyCode.Nine, function()
     local args = {
         [1] = "Private Pure Love Train: Rendezvous"
         }
@@ -252,7 +252,7 @@ TechSection:NewKeybind("Rendezvous", "", Enum.KeyCode.Eight, function()
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Combat"):WaitForChild("Skill"):FireServer(unpack(args))
 end)
 
-TechSection:NewKeybind("Slot Slam", "", Enum.KeyCode.Nine, function()
+TechSection:NewKeybind("Slot Slam", "", Enum.KeyCode.Minus, function()
     local args = {
         [1] = "Private Pure Love Train: Slot Slam"
         }
