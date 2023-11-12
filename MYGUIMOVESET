@@ -238,7 +238,7 @@ end)
 
 TechSection:NewKeybind("Pachkinko Rush", "", Enum.KeyCode.Seven, function()
     local args = {
-        [1] = "Private Pure Love Train: Pachkinko Rush"
+        [1] = "Private Pure Love Train: Pachinko Rush"
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Combat"):WaitForChild("Skill"):FireServer(unpack(args))
