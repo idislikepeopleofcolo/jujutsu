@@ -1,0 +1,296 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("CA", "Midnight")
+
+local Tab = Window:NewTab("Mechs")
+local FirstSection = Tab:NewSection("No CD")
+
+FirstSection:NewToggle("Infinity", "Block No Anim", function(state)
+    if state then
+        local args = {
+            [1] = {
+            ["Module"] = "AttackHandler",
+            ["Arg"] = {
+                [1] = "Began"
+            },   
+            ["Action"] = "Block"
+            }
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("remotes"):WaitForChild("base"):FireServer(unpack(args))
+    else
+        local args = {
+            [1] = {
+            ["Module"] = "AttackHandler",
+            ["Arg"] = {},
+            ["Action"] = "Block"
+            }
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("remotes"):WaitForChild("base"):FireServer(unpack(args))
+    end
+end)
+
+FirstSection:NewKeybind("Dash Punch", "HAS A CD", Enum.KeyCode.T, function()
+    local args = {
+        [1] = {
+        ["Module"] = "AttackHandler",
+        ["Arg"] = {
+        [1] = "Front",
+        [2] = 0
+        },
+        ["Action"] = "Dash"
+        }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("remotes"):WaitForChild("base"):FireServer(unpack(args))
+end)
+
+
+FirstSection:NewKeybind("Final Punch", "Knockback", Enum.KeyCode.Seven, function()
+	local args = {
+        [1] = {
+        ["Module"] = "AttackHandler",
+        ["Arg"] = {
+        [1] = false,
+        [2] = true,
+        [3] = true
+        },
+        ["Action"] = "Punch"
+        }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("remotes"):WaitForChild("base"):FireServer(unpack(args))
+end)
+
+
+FirstSection:NewKeybind("DropKick", "W ong", Enum.KeyCode.Six, function()
+	local args = {
+        [1] = {
+        ["Module"] = "AttackHandler",
+        ["Arg"] = {
+        [1] = false,
+        [2] = false,
+        [3] = true
+        },
+        ["Action"] = "Punch"
+        }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("remotes"):WaitForChild("base"):FireServer(unpack(args))
+end)
+
+FirstSection:NewKeybind("Uppercut", "W ong", Enum.KeyCode.Five, function()
+	local args = {
+        [1] = {
+        ["Module"] = "AttackHandler",
+        ["Arg"] = {
+        [1] = true,
+        [2] = true,
+        [3] = true
+        },
+        ["Action"] = "Punch"
+        }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("remotes"):WaitForChild("base"):FireServer(unpack(args))
+end)
+
+local Tab = Window:NewTab("Deletes")
+local VelocitySection = Tab:NewSection("Other Mechanic Shit")
+
+
+VelocitySection:NewButton("Delete Velocity", "NEEDS TO BE USED TO USE THESE TECHS", function()
+    local dd = {
+        "V",
+        "BodyVelocity"
+    
+    }
+    game.Players.LocalPlayer.Character.DescendantAdded:Connect(function(r)
+       task.wait()
+       if table.find(dd,r.Name)  then r:Destroy() end
+    end)
+end)
+
+
+local Tab = Window:NewTab("Anim")
+local AnimSection = Tab:NewSection("Supporting")
+
+AnimSection:NewKeybind("", "", Enum.KeyCode.Five, function()
+	local speaker = game:GetService("Players").LocalPlayer
+local plr = game:GetService("Players").LocalPlayer
+local args = {
+   [1] = 14445425504,
+   [2] = 0.7,
+}
+
+function r15(plr)
+    if plr.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
+        return true
+    end
+end
+
+if not r15(speaker) then
+    local pchar = speaker.Character
+    local AnimationId = tostring(args[1])
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
+    k:Play()
+    if args[2] then
+        k:AdjustSpeed(tostring(args[2]))
+    end
+else
+    notify('R6 Required','This command requires the r6 rig type')
+end
+end)
+
+AnimSection:NewKeybind("", "", Enum.KeyCode.Six, function()
+	local speaker = game:GetService("Players").LocalPlayer
+local plr = game:GetService("Players").LocalPlayer
+local args = {
+   [1] = 14156897674,
+   [2] = 1.5,
+}
+
+function r15(plr)
+    if plr.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
+        return true
+    end
+end
+
+if not r15(speaker) then
+    local pchar = speaker.Character
+    local AnimationId = tostring(args[1])
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
+    k:Play()
+    if args[2] then
+        k:AdjustSpeed(tostring(args[2]))
+    end
+else
+    notify('R6 Required','This command requires the r6 rig type')
+end
+end)
+
+AnimSection:NewKeybind("", "", Enum.KeyCode.Seven, function()
+	local speaker = game:GetService("Players").LocalPlayer
+local plr = game:GetService("Players").LocalPlayer
+local args = {
+   [1] = 14233341110,
+   [2] = 1,
+}
+
+function r15(plr)
+    if plr.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
+        return true
+    end
+end
+
+if not r15(speaker) then
+    local pchar = speaker.Character
+    local AnimationId = tostring(args[1])
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
+    k:Play()
+    if args[2] then
+        k:AdjustSpeed(tostring(args[2]))
+    end
+else
+    notify('R6 Required','This command requires the r6 rig type')
+end
+end)
+
+AnimSection:NewKeybind("", "", Enum.KeyCode.T, function()
+	local speaker = game:GetService("Players").LocalPlayer
+local plr = game:GetService("Players").LocalPlayer
+local args = {
+   [1] = 14210434398,
+   [2] = 1,
+}
+
+function r15(plr)
+    if plr.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
+        return true
+    end
+end
+
+if not r15(speaker) then
+    local pchar = speaker.Character
+    local AnimationId = tostring(args[1])
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
+    k:Play()
+    if args[2] then
+        k:AdjustSpeed(tostring(args[2]))
+    end
+else
+    notify('R6 Required','This command requires the r6 rig type')
+end
+end)
+
+AnimSection:NewKeybind("", "", Enum.KeyCode.Q, function()
+	local speaker = game:GetService("Players").LocalPlayer
+local plr = game:GetService("Players").LocalPlayer
+local args = {
+   [1] = 14806205897,
+   [2] = 1,
+}
+
+function r15(plr)
+    if plr.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
+        return true
+    end
+end
+
+if not r15(speaker) then
+    local pchar = speaker.Character
+    local AnimationId = tostring(args[1])
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
+    k:Play()
+    if args[2] then
+        k:AdjustSpeed(tostring(args[2]))
+    end
+else
+    notify('R6 Required','This command requires the r6 rig type')
+end
+end)
+
+AnimSection:NewKeybind("", "", Enum.KeyCode.E, function()
+	local speaker = game:GetService("Players").LocalPlayer
+local plr = game:GetService("Players").LocalPlayer
+local args = {
+   [1] = 14805861279,
+   [2] = 1,
+}
+
+function r15(plr)
+    if plr.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
+        return true
+    end
+end
+
+if not r15(speaker) then
+    local pchar = speaker.Character
+    local AnimationId = tostring(args[1])
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
+    k:Play()
+    if args[2] then
+        k:AdjustSpeed(tostring(args[2]))
+    end
+else
+    notify('R6 Required','This command requires the r6 rig type')
+end
+end)
+
+
+local Tab = Window:NewTab("Others")
+local MiscSection = Tab:NewSection("Miscallenous")
+
+MiscSection:NewButton("Back/Front Flip | Z & X", "Makes you do gymnastics", function()
+	loadstring(game:HttpGet('https://pastebin.com/raw/7wDcPtLk'))()
+end)
+
+MiscSection:NewKeybind("Toggle UI", "", Enum.KeyCode.LeftControl, function()
+	Library:ToggleUI()
+end)
